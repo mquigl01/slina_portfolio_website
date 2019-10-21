@@ -16,7 +16,7 @@ html {
 
 .title {
   font-size: 34px;
-  color: #E9B000;
+  color: #88BDBC;
   padding: 30px;
   padding-bottom: 0px;
   margin: auto;
@@ -25,7 +25,7 @@ html {
 
 .mobileTitle {
   font-size: 24px;
-  color: #E9B000;
+  color: #88BDBC;
   padding: 5px;
   margin: 0px;
   text-align: center;
@@ -58,14 +58,14 @@ p {
 
 h1 {
   font-size: 60px;
-  background: -webkit-linear-gradient(#EB6E80, #E9B000);
+  background: -webkit-linear-gradient(#254E58, #88BDBC);
   -webkit-text-fill-color: white;
 }
 
 
 .tabHeader {
   background-color: white;
-  border-bottom: 1px solid lightgrey;
+  border-bottom: 1px solid #4F4A41;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -75,24 +75,24 @@ h1 {
 
 .postTitle {
   font-size: 28px;
-  color: #EB6E80;
+  color: #254E58;
   padding: 30px;
 }
 
 .mobilePostTitle {
   font-size: 20px;
-  color: #EB6E80;
+  color: #254E58;
   padding: 10px;
 }
 
 button {
   font-size: 24px;
   background-color: white;
-  color: #E9B000;
+  color: #88BDBC;
   padding: 2px;
   min-height: 30px;
   min-width: 100px;
-  border: 1px solid #EB6E80;
+  border: 1px solid #254E58;
   border-radius: 25px;
   margin: 10px;
   padding-left: 5px;
@@ -112,7 +112,7 @@ select {
 
 button:hover {
   color: white;
-  background-color: #E9B000;
+  background-color: #88BDBC;
 }
 
 label {
@@ -159,7 +159,7 @@ input {
 }
 
 .postDiv {
-  border: 1px solid #EB6E80;
+  border: 1px solid #254E58;
   margin: 20px;
   padding: 20px;
   border-radius: 25px;
@@ -170,7 +170,7 @@ input {
 }
 
 .mobilePostDiv {
-  border: 1px solid #EB6E80;
+  border: 1px solid #254E58;
   margin: 10px;
   padding: 10px;
   border-radius: 25px;

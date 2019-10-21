@@ -65,7 +65,7 @@ const tabStyle = {
   borderTopRightRadius: "8px",
   borderTopLeftRadius: "8px",
   textDecoration: 'none',
-  border: "1px solid lightgrey",
+  border: "1px solid #4F4A41",
   borderBottom: "none",
   margin: "5px",
   marginTop: "40px"
@@ -83,7 +83,7 @@ const hoverTabStyle = {
   borderTopRightRadius: "8px",
   borderTopLeftRadius: "8px",
   textDecoration: 'none',
-  border: "2px solid lightgrey",
+  border: "2px solid #4F4A41",
   borderBottom: "4px solid white",
   margin: "5px",
   marginTop: "40px"
