@@ -2,13 +2,23 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import MediaQuery  from 'react-responsive';
 
-const Button = withRouter(({ history }) => (
+const Portfolio = withRouter(({ history }) => (
   <button
     type='button'
-    onClick={() => { history.push('/WorkTermOne'); window.location.reload(); }}
-    style={{padding: "12px", fontWeight: "bolder"}}
+    onClick={() => { history.push('/Portfolio'); window.location.reload(); }}
+    style={{paddingBottom: "20px", fontWeight: "bolder", border: "none"}}
   >
-    The Co-operators
+    My Portfolio
+  </button>
+));
+
+const About = withRouter(({ history }) => (
+  <button
+    type='button'
+    onClick={() => { history.push('/AboutMe'); window.location.reload(); }}
+    style={{paddingBottom: "20px", fontWeight: "bolder", border: "none"}}
+  >
+    About Me
   </button>
 ));
 
@@ -18,32 +28,31 @@ class HomeForm extends React.Component {
       <div>
         <MediaQuery query='(max-width: 1224px)'>
         <div className="tabContent">
-            <h3 className="title" >Welcome To My Website</h3>
+            <h3 className="title" >Welcome To My Website</h3> <br></br>
             <p style={{paddingLeft: "30px", paddingRight: "30px"}}>
-            This website was created to detail the experiences I had during my CO-OP work terms, starting 
-            at the Co-operators (Guelph location). I spent my term working with the Build Automation and 
-            Release (BAR) team where we were responsible for the automation of testing, release activities,
-             and building/maintaining environments. My hope is by looking through this website, you will 
-             learn more about the experiences and skills I gained throughout my Software Engineering CO-OP 
-             program at the University of Guelph. To learn more about my first and second work term at The 
-             Co-operators, click the button below.</p> <br></br>
-             <Button />
+              To view my portfolion click:
+            </p>
+            <Portfolio />
+             <br></br>
+
+             <p style={{paddingLeft: "30px", paddingRight: "30px"}}>
+              To learn more about me see:
+            </p><About />
              <br></br>
         </div>
         </MediaQuery>
 
         <MediaQuery query='(min-width: 1224px)'>
         <div className="tabContent">
-            <h3 className="title" >Welcome To My Website</h3>
+            <h3 className="title" >Welcome To My Website</h3> <br></br>
             <p style={{paddingLeft: "30px", paddingRight: "30px"}}>
-            This website was created to detail the experiences I had during my CO-OP work terms, starting 
-            at the Co-operators (Guelph location). I spent my term working with the Build Automation and 
-            Release (BAR) team where we were responsible for the automation of testing, release activities,
-             and building/maintaining environments. My hope is by looking through this website, you will 
-             learn more about the experiences and skills I gained throughout my Software Engineering CO-OP 
-             program at the University of Guelph. To learn more about my first and second work term at The 
-             Co-operators, click the button below.</p> <br></br>
-             <Button />
+              To view my portfolio see:
+            </p><Portfolio />
+             <br></br>
+
+             <p style={{paddingLeft: "30px", paddingRight: "30px"}}>
+              To learn more about me see:
+            </p><About />
              <br></br>
         </div>
         </MediaQuery>

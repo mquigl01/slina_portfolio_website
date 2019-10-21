@@ -9,62 +9,34 @@
 }
 
 html {
-  background-color: #7eb2c4; 
+  background-color: black; 
   text-align: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.title {
+h3 {
   font-size: 34px;
-  color: #88BDBC;
+  color: #0099CC;
   padding: 30px;
   padding-bottom: 0px;
   margin: auto;
   text-align: center;
 }
 
-.mobileTitle {
-  font-size: 24px;
-  color: #88BDBC;
-  padding: 5px;
-  margin: 0px;
-  text-align: center;
-}
-
 p {
-  line-height: 200%;
+  line-height: 100%;
   color: black;
   font-size: 20px;
 }
 
-.placement {
-  font-size: 24px;
-  color: #7eb2c4;
-  font-weight: bold;
-  padding: 10px;
-  padding-bottom: 20px;
-  margin: auto;
-  text-align: center;
-}
-
-.mobilePlacement {
-  font-size: 22px;
-  color: #7eb2c4;
-  font-weight: bold;
-  padding: 5px;
-  margin: 0px;
-  text-align: center;
-}
-
 h1 {
   font-size: 60px;
-  background: -webkit-linear-gradient(#254E58, #88BDBC);
+  background: -webkit-linear-gradient(#006699, #0099CC);
   -webkit-text-fill-color: white;
 }
 
-
 .tabHeader {
-  background-color: white;
+  background-color: #006699;
   border-bottom: 1px solid #4F4A41;
   border-top: none;
   border-left: none;
@@ -73,108 +45,27 @@ h1 {
   padding: 20px;
 }
 
-.postTitle {
-  font-size: 28px;
-  color: #254E58;
-  padding: 30px;
-}
-
-.mobilePostTitle {
-  font-size: 20px;
-  color: #254E58;
-  padding: 10px;
-}
-
 button {
   font-size: 24px;
   background-color: white;
-  color: #88BDBC;
-  padding: 2px;
-  min-height: 30px;
-  min-width: 100px;
-  border: 1px solid #254E58;
-  border-radius: 25px;
-  margin: 10px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-select {
-  font-size: 24px;
-  background-color: white;
-  border: 1px solid  #a5c9c9;
   color: black;
-  margin: 10px;
-  min-height: 30px;
-  min-width: 100px;
-  padding: 10px;
+  text-decoration: none;
+  padding: 2px;
 }
 
 button:hover {
-  color: white;
-  background-color: #88BDBC;
+  color:#0099CC;
+  background-color: white;
+  text-decoration: underline;
+  padding: 2px;
 }
 
 label {
   font-size: 24px;
-  background-color: white;
   color: black;
   margin: 20px;
   min-height: 30px;
   min-width: 100px;
-}
-
-input {
-  font-size: 24px;
-  background-color: white;
-  border: 1px solid  #a5c9c9;
-  color: black;
-  margin: 10px;
-  min-height: 30px;
-  min-width: 100px;
-}
-
-.mobileSelection {
-  font-size: 18px;
-  background-color: white;
-  border: 1px solid  #a5c9c9;
-  color: black;
-  margin: 5px;
-  min-height: 25px;
-  min-width: 80px;
-}
-
-.descriptionBox {
-  font-size: 20px;
-  background-color: white;
-  border: 1px solid  #a5c9c9;
-  color: black;
-  margin: 10px;
-}
-
-#AddPost {
-  float: right;
-  margin: 20px;
-  font-size: 20px;
-}
-
-.postDiv {
-  border: 1px solid #254E58;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 25px;
-}
-
-.mobileAdded {
-  font-size: 18px;
-}
-
-.mobilePostDiv {
-  border: 1px solid #254E58;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 25px;
-  font-size: 16px;
 }
 
 .tabContent {
