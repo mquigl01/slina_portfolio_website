@@ -25,20 +25,17 @@ const mobileOptions = {
 
 
 const tabStyle = {
-  color: 'white',
-  fontWeight: "bold",
-  fontSize: '24px',
+  color: 'black',
+  fontSize: '40px',
   textDecoration: 'none',
   padding: "20px"
 };
 
 const hoverTabStyle = {
-  color: 'black',
-  fontSize: '24px',
-  fontWeight: "bold",
+  color: '#006699',
+  fontSize: '40px',
   paddingBottom: "20px",
   textDecoration: 'none',
-  textDecoration: 'underline',
   padding: "20px"
 };
 
@@ -157,14 +154,14 @@ class App extends React.Component {
           <div>
               <MediaQuery query='(min-width: 1224px)'>
                 <nav className="tabHeader">
-                <label style={{color: "white", fontWeight: "bold", fontSize: "35px"}}>Slina Frichitthavong</label>
+                <label style={{color: "black", fontSize: "80px"}}>Slina Frich</label>
 
                 <div style={{float:"Right", paddingRight: "60px"}}>
                   {history.location.pathname === "/" && 
                     <Link 
                     style={hoverTabStyle} 
                     to="/">
-                    Home
+                    home
                     </Link>
                   }
 
@@ -175,14 +172,14 @@ class App extends React.Component {
                     onMouseLeave={this.hoverHomeOff}  
                     onClick={this.selectHome} 
                     to="/">
-                    Home
+                    home
                     </Link>
                   }
                   {history.location.pathname === "/Portfolio" && 
                       <Link  
                       style={hoverTabStyle} 
                       to="/Portfolio">
-                        Portfolio
+                        portfolio
                       </Link>
                   }
 
@@ -193,7 +190,7 @@ class App extends React.Component {
                       onMouseEnter={this.hoverPortfolioOn} 
                       onMouseLeave={this.hoverPortfolioOff} 
                       to="/Portfolio">
-                        Portfolio
+                        portfolio
                         </Link>
                   }
                   
@@ -201,7 +198,7 @@ class App extends React.Component {
                 <Link
                 style={ hoverTabStyle} 
                 to="/AboutMe">
-                  About Me
+                  about me
                   </Link>
               }
 
@@ -212,7 +209,7 @@ class App extends React.Component {
                 onMouseEnter={this.hoverAboutMeOn} 
                 onMouseLeave={this.hoverAboutMeoff} 
                 to="/AboutMe">
-                  About Me
+                  about me
                   </Link>
               }
               </div> 
@@ -225,13 +222,13 @@ class App extends React.Component {
                   isOpen={this.state.menuOpen}
                   closeCallback={this.closeMenu.bind(this)}>
                         <Link onClick={this.closeMenu.bind(this)} style={{textDecoration: "none"}} to="/">
-                          <p style={{mobileOptions}}>Home</p>
+                          <p style={{mobileOptions}}>home</p>
                         </Link>
                         <Link onClick={this.closeMenu.bind(this)} style={{textDecoration: "none"}} to="/Portfolio">
-                          <p style={{mobileOptions}}>Portfolio</p>
+                          <p style={{mobileOptions}}>portfolio</p>
                         </Link>
                         <Link  onClick={this.closeMenu.bind(this)}style={{textDecoration: "none"}} to="/AboutMe">
-                          <p style={{mobileOptions}}>About Me</p>
+                          <p style={{mobileOptions}}>about me</p>
                         </Link>
                 </CheeseburgerMenu>
           
@@ -248,7 +245,7 @@ class App extends React.Component {
                 />
             </div>
             <div  style={{paddingBottom: "30px"}}>
-              <label style={{color: "white", fontWeight: "bold", fontSize: "35px"}}>Slina Frichitthavong</label>
+              <label style={{color: "white", fontSize: "70px"}}>Slina Frich</label>
             </div>
         </MediaQuery>
 
@@ -260,7 +257,6 @@ class App extends React.Component {
         </div>
       </Router> <br></br>
         <SocialIcon style={{margin: "20px", width: "30px", height: "30px"}} url="https://www.instagram.com/slick_frick_/" />
-        <SocialIcon style={{margin: "20px", width: "30px", height: "30px"}} url="https://www.facebook.com/slina.frichitthavong" />
         <SocialIcon style={{margin: "20px", width: "30px", height: "30px"}} url="https://www.youtube.com/channel/UCPY6yZMhmFBMisG1AJo9mCg" />
         <SocialIcon style={{margin: "20px", width: "30px", height: "30px"}} url="https://www.linkedin.com/in/slina-frichitthavong-a60790159/?originalSubdomain=ca" />
       </div>
@@ -268,27 +264,5 @@ class App extends React.Component {
   }
 }
 
-async function checkUser(username, password) {
-  let info = {};
-  info.username = username;
-  info.password = password;
-  console.log(info);
-
-  let data = {};
-
-  await (async () => {
-    const rawResponse = await fetch('/api/v1/checkUser', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(info)
-    });
-    data = await rawResponse.json();
-  })();
-
-    return data;
-}
 
 export default App;
