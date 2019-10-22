@@ -28,13 +28,13 @@ h3 {
 p {
   line-height: 100%;
   color: black;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 li {
   line-height: 100%;
   color: black;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .carousel .thumb img {
@@ -44,7 +44,7 @@ li {
 
 .slider-item-div {
   padding: 20px;
-  background-color: white;
+  background-color: black;
   text-align: center;
   height: 100%;
   width: 100%;
@@ -66,7 +66,7 @@ li {
   border-top: none;
   border-left: none;
   border-right: none;
-  text-align: center;
+  min-height: 80px;
   padding: 20px;
 }
 
@@ -115,7 +115,7 @@ button:hover {
 }
 
 label {
-  font-size: 28px;
+  font-size: 24px;
   color: black;
   margin: 20px;
   min-height: 30px;

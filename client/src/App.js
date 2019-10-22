@@ -271,7 +271,7 @@ class App extends React.Component {
           <div>
               <MediaQuery query='(min-width: 1224px)'>
                 <nav className="tabHeader">
-                <label style={{color: "black", fontSize: "80px"}}>Slina Frich</label>
+                <label style={{color: "black", fontSize: "80px", position: "absolute", left: "50px", top: "0px"}}>Slina Frich</label>
 
                 <div style={{float:"Right", paddingRight: "60px"}}>
                   {history.location.pathname === "/" && 

@@ -14,11 +14,11 @@ class HomeForm extends React.Component {
       <div>
         <MediaQuery query='(max-width: 1224px)'>
         <div className="tabContent">
-            <Carousel className="carousel-style" showThumbs={true} infiniteLoop={true} showStatus={false} autoPlay={true} centerMode={true}>
+            <Carousel useKeyboardArrows={true} swipeable={true} className="carousel-style" showThumbs={true} infiniteLoop={true} showStatus={false} autoPlay={true} centerMode={true}>
                <div className="slider-item-div"><img src={Panda} alt="Panda" width={350} height={250} /></div>
                <div className="slider-item-div"><img src={Mikko} alt="Mikko" width={350} height={250} /></div>
                <div className="slider-item-div"><img src={Julia} alt="Julia" width={350} height={250} /></div>
-               <div className="slider-item-div"><img src={Shoes} alt="Panda" width={350} height={250} /></div>
+               <div className="slider-item-div"><img src={Shoes} alt="Shoes" width={350} height={250} /></div>
             </Carousel>
         </div>
         </MediaQuery>
@@ -29,7 +29,7 @@ class HomeForm extends React.Component {
                <div className="slider-item-div"><img src={Panda} alt="Panda" width={350} height={250} /></div>
                <div className="slider-item-div"><img src={Mikko} alt="Mikko" width={350} height={250} /></div>
                <div className="slider-item-div"><img src={Julia} alt="Julia" width={350} height={250} /></div>
-               <div className="slider-item-div"><img src={Shoes} alt="Panda" width={350} height={250} /></div>
+               <div className="slider-item-div"><img src={Shoes} alt="Shoes" width={450} height={350} /></div>
             </Carousel>
         </div>
         </MediaQuery>
