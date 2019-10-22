@@ -10,12 +10,15 @@
     "list-react-files": "^0.2.0",
     "react": "^16.8.6",
     "react-alice-carousel": "^1.15.3",
-    "react-bootstrap": "^1.0.0-beta.10",
+    "react-bootstrap": "^1.0.0-beta.14",
     "react-columns": "^1.2.1",
     "react-dom": "^16.9.0",
+    "react-fullscreen-image": "0.0.3",
     "react-grid-gallery": "^0.5.5",
     "react-hamburger-menu": "^1.1.1",
     "react-image-gallery": "^0.9.1",
+    "react-images": "^1.0.0",
+    "react-images-viewer": "^1.6.2",
     "react-modal": "^3.9.1",
     "react-photo-gallery": "^8.0.0",
     "react-responsive": "^8.0.1",
@@ -24,7 +27,8 @@
     "react-scripts": "3.0.1",
     "react-share": "^3.0.1",
     "react-slick": "^0.25.2",
-    "react-social-icons": "^4.1.0"
+    "react-social-icons": "^4.1.0",
+    "reactstrap": "^8.1.1"
   },
   "scripts": {
     "start": "react-scripts start",

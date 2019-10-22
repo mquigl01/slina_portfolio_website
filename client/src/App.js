@@ -1,16 +1,21 @@
 import React from 'react';
 import './App.css';
-import Modal from 'react-modal';
 import AboutMeForm from "./Components/AboutMeForm";
 import HomeForm from "./Components/HomeForm";
-import Portfolio from "./Components/Portfolio";
+import Portraits from "./Components/Portraits";
+import PersonalIllustration from "./Components/PersonalIllustrations";
+import Rotoscopes from "./Components/Rotoscopes";
+import Observational from "./Components/Observational";
+import Design from "./Components/Design";
 import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 import { createBrowserHistory } from 'history';
 import MediaQuery  from 'react-responsive';
 import CheeseburgerMenu from 'cheeseburger-menu';
 import HamburgerMenu from 'react-hamburger-menu';
 import { SocialIcon } from 'react-social-icons';
+
 let history = null;
+
 
 const mobileOptions = {
   backgroundColor: "white",
@@ -54,23 +59,58 @@ class App extends React.Component {
       password: "",
       hoverHome: false,
       hoverPortfolio: false,
+      hoverDesign: false,
+      hoverObservation: false,
+      hoverPersonal: false,
+      hoverPortraits: false,
+      hoverRotoscopes: false,
       hoverAboutMe: false,
       modalIsOpen: false,
       menuOpen: false,
+      showMenu: false
     };
+    this.hoverDesignOn = this.hoverDesignOn.bind(this);
+    this.hoverDesignOff = this.hoverDesignOff.bind(this);
+    this.selectDesign = this.selectDesign.bind(this);
+    
+    this.hoverObservationalOn = this.hoverObservationalOn.bind(this);
+    this.hoverObservationalOff = this.hoverObservationalOff.bind(this);
+    this.selectObservational = this.selectObservational.bind(this);
+
+    this.hoverPersonalOn = this.hoverPersonalOn.bind(this);
+    this.hoverPersonalOff = this.hoverPersonalOff.bind(this);
+    this.selectPersonal = this.selectPersonal.bind(this);
+
+    this.hoverPortraitsOn = this.hoverPortraitsOn.bind(this);
+    this.hoverPortraitsOff = this.hoverPortraitsOff.bind(this);
+    this.selectPortraits = this.selectPortraits.bind(this);
+
+    this.hoverRotoscopesOn = this.hoverRotoscopesOn.bind(this);
+    this.hoverRotoscopesOff = this.hoverRotoscopesOff.bind(this);
+    this.selectRotoscopes = this.selectRotoscopes.bind(this);
 
     this.handleStateChange = this.handleStateChange.bind(this);
     this.hoverHomeOn = this.hoverHomeOn.bind(this);
     this.hoverHomeOff = this.hoverHomeOff.bind(this);
-    this.hoverPortfolioOn = this.hoverPortfolioOn.bind(this);
-    this.hoverPortfolioOff = this.hoverPortfolioOff.bind(this);
     this.hoverAboutMeOn = this.hoverAboutMeOn.bind(this);
     this.hoverAboutMeoff = this.hoverAboutMeoff.bind(this);
     this.selectHome = this.selectHome.bind(this);
-    this.selectPortfolio = this.selectPortfolio.bind(this);
     this.selectAboutMe = this.selectAboutMe.bind(this);
     this.updateHistory = this.updateHistory.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+    this.changeDropDown = this.changeDropDown.bind(this);
+    this.showMenu = this.showMenu.bind(this); 
+    this.closeMenu = this.closeMenu.bind(this);
+  }
+
+  showMenu() {
+    let visible = this.state.showMenu;
+    this.setState({
+      showMenu: !visible,
+    });
+  }
+
+  changeDropDown(e) {
+    this.setState({ selectedOption:  e.target.value});
   }
 
   openMenu() {
@@ -81,60 +121,137 @@ class App extends React.Component {
     this.setState({ menuOpen: false })
   }
 
-  // Closes the modal that alerts the client they are making an insurance-less client
-  closeModal() {
-    this.setState({modalIsOpen: false});
-  }
-
   updateHistory() {
     history = createBrowserHistory();
   }
 
+  async selectDesign() {
+    this.setState({ hoverAboutMe: false });
+    this.setState({ hoverHome: false });
+    this.setState({ hoverObservation: false });
+    this.setState({ hoverPersonal: false });
+    this.setState({ hoverPortraits: false });
+    this.setState({ hoverRotoscopes: false });
+    this.setState({ hoverDesign: true });
+    await history.push("/Design");
+  }
+  hoverDesignOn(){
+    this.setState({ hoverDesign: true });
+  }
+  hoverDesignOff(){ 
+    if(history.location.pathname !== "/Design") {
+      this.setState({ hoverDesign: false });
+    }
+  }
+
+  async selectObservational() {
+    this.setState({ hoverAboutMe: false });
+    this.setState({ hoverHome: false });
+    this.setState({ hoverObservation: true });
+    this.setState({ hoverPersonal: false });
+    this.setState({ hoverPortraits: false });
+    this.setState({ hoverRotoscopes: false });
+    this.setState({ hoverDesign: false });
+    await history.push("/Observational");
+  }
+  hoverObservationalOn(){
+    this.setState({ hoverObservation: true });
+  }
+  hoverObservationalOff(){ 
+    if(history.location.pathname !== "/Observational") {
+      this.setState({ hoverObservation: false });
+    }
+  }
+
+  async selectPersonal() {
+    this.setState({ hoverAboutMe: false });
+    this.setState({ hoverHome: false });
+    this.setState({ hoverObservation: false });
+    this.setState({ hoverPersonal: true });
+    this.setState({ hoverPortraits: false });
+    this.setState({ hoverRotoscopes: false });
+    this.setState({ hoverDesign: false });
+    await history.push("/PersonalIllustration");
+  }
+  hoverPersonalOn(){
+    this.setState({ hoverPersonal: true });
+  }
+  hoverPersonalOff(){ 
+    if(history.location.pathname !== "/PersonalIllustration") {
+      this.setState({ hoverPersonal: false });
+    }
+  }
+
+  async selectPortraits() {
+    this.setState({ hoverAboutMe: false });
+    this.setState({ hoverHome: false });
+    this.setState({ hoverObservation: false });
+    this.setState({ hoverPersonal: false });
+    this.setState({ hoverPortraits: true });
+    this.setState({ hoverRotoscopes: false });
+    this.setState({ hoverDesign: false });
+    await history.push("/Portraits");
+  }
+  hoverPortraitsOn(){
+    this.setState({ hoverPortraits: true });
+  }
+  hoverPortraitsOff(){ 
+    if(history.location.pathname !== "/Portraits") {
+      this.setState({ hoverPortraits: false });
+    }
+  }
+
+  async selectRotoscopes() {
+    this.setState({ hoverAboutMe: false });
+    this.setState({ hoverHome: false });
+    this.setState({ hoverObservation: false });
+    this.setState({ hoverPersonal: false });
+    this.setState({ hoverPortraits: false });
+    this.setState({ hoverRotoscopes: true });
+    this.setState({ hoverDesign: false });
+    await history.push("/Rotoscopes");
+  }
+  hoverRotoscopesOn(){
+    this.setState({ hoverRotoscopes: true });
+  }
+  hoverRotoscopesOff(){ 
+    if(history.location.pathname !== "/Rotoscopes") {
+      this.setState({ hoverRotoscopes: false });
+    }
+  }
+
   async selectHome() {
     this.setState({ hoverAboutMe: false });
-    this.setState({ hoverPortfolio: false });
+    this.setState({ hoverObservation: false });
+    this.setState({ hoverPersonal: false });
+    this.setState({ hoverPortraits: false });
+    this.setState({ hoverRotoscopes: false });
+    this.setState({ hoverDesign: false });
     this.setState({ hoverHome: true });
     await history.push("/");
   }
-
   hoverHomeOn(){
     this.setState({ hoverHome: true });
   }
-
   hoverHomeOff(){ 
     if(history.location.pathname !== "/") {
       this.setState({ hoverHome: false });
     }
   }
 
-  async selectPortfolio(){
-    this.setState({ hoverAboutMe: false });
-    this.setState({ hoverPortfolio: true });
-    this.setState({ hoverHome: false });
-    await history.push("/Portfolio");
-  }
-
-  hoverPortfolioOn(){
-    this.setState({ hoverPortfolio: true });
-  }
-
-  hoverPortfolioOff() { 
-    if(history.location.pathname !== "/Portfolio") {
-      this.setState({ hoverPortfolio: false });    
-    }
-  }
-
   async selectAboutMe(){
     this.setState({ hoverAboutMe: true });
-    this.setState({ hoverPortfolio: false });
+    this.setState({ hoverObservation: false });
+    this.setState({ hoverPersonal: false });
+    this.setState({ hoverPortraits: false });
+    this.setState({ hoverRotoscopes: false });
+    this.setState({ hoverDesign: false });
     this.setState({ hoverHome: false });
     await history.push("/AboutMe");
   }
-
   hoverAboutMeOn(){
     this.setState({ hoverAboutMe: true });
   }
-
   hoverAboutMeoff(){ 
     if(history.location.pathname !== "/AboutMe") {
       this.setState({ hoverAboutMe: false });    
@@ -175,25 +292,76 @@ class App extends React.Component {
                     home
                     </Link>
                   }
-                  {history.location.pathname === "/Portfolio" && 
-                      <Link  
-                      style={hoverTabStyle} 
-                      to="/Portfolio">
-                        portfolio
-                      </Link>
-                  }
 
-                  {history.location.pathname !== "/Portfolio" && 
-                      <Link 
-                      onClick={this.selectPortfolio} 
-                      style={this.state.hoverPortfolio ? hoverTabStyle : tabStyle} 
-                      onMouseEnter={this.hoverPortfolioOn} 
-                      onMouseLeave={this.hoverPortfolioOff} 
-                      to="/Portfolio">
-                        portfolio
-                        </Link>
-                  }
-                  
+                  <div class="dropdown">
+                    {(history.location.pathname === "/PersonalIllustration" || history.location.pathname === "/Portraits" || history.location.pathname === "/Design" ||
+                      history.location.pathname === "/Observational" || history.location.pathname === "/Rotoscopes") &&
+                      <label style={hoverTabStyle} >portfolio ↴</label>
+                    }
+                    {(history.location.pathname !== "/PersonalIllustration" && history.location.pathname !== "/Portraits" && history.location.pathname !== "/Design" &&
+                      history.location.pathname !== "/Observational" && history.location.pathname !== "/Rotoscopes") &&
+                      <label style={this.state.Portfolio ? hoverTabStyle : tabStyle} >portfolio ↴</label>
+                    }
+
+                  <div class="dropdown-content">
+                      {history.location.pathname === "/PersonalIllustration" &&
+                      <div>
+                        <Link style={hoverTabStyle} onMouseEnter={this.hoverPersonalOn}  onMouseLeave={this.hoverPersonalOff} onClick={this.selectPersonal}  to="/PersonalIllustration">personal illustration</Link> <br></br>
+                      </div>
+                      }
+                      {history.location.pathname !== "/PersonalIllustration" &&
+                      <div>
+                        <Link style={this.state.hoverPersonal ? hoverTabStyle : tabStyle} onMouseEnter={this.hoverPersonalOn}  onMouseLeave={this.hoverPersonalOff} onClick={this.selectPersonal} to="/PersonalIllustration">personal illustration</Link> <br></br>
+                      </div>
+                      }
+
+                      {history.location.pathname === "/Portraits" &&
+                        <div>
+                          <Link style={hoverTabStyle} onMouseEnter={this.hoverPortraitsOn}  onMouseLeave={this.hoverPortraitsOff} onClick={this.selectPortraits} to="/Portraits">portraits</Link> <br></br>
+                        </div>
+                      }
+                      {history.location.pathname !== "/Portraits" &&
+                        <div>
+                          <Link style={this.state.hoverPortraits ? hoverTabStyle : tabStyle} onMouseEnter={this.hoverPortraitsOn}  onMouseLeave={this.hoverPortraitsOff} onClick={this.selectPortraits} to="/Portraits">portraits</Link> <br></br>
+                        </div>
+                      }
+
+                      {history.location.pathname === "/Design" &&
+                        <div>
+                          <Link style={hoverTabStyle} onMouseEnter={this.hoverDesignOn}  onMouseLeave={this.hoverDesignOff} onClick={this.selectDesign} to="/Design">design</Link> <br></br>
+                        </div>
+                      }
+                      {history.location.pathname !== "/Design" &&
+                        <div>
+                            <Link style={this.state.hoverDesign ? hoverTabStyle : tabStyle} onMouseEnter={this.hoverDesignOn}  onMouseLeave={this.hoverDesignOff} onClick={this.selectDesign} to="/Design">design</Link> <br></br>
+                        </div>
+                      }
+
+                      {history.location.pathname === "/Observational" &&
+                      <div>
+                          <Link style={hoverTabStyle} onMouseEnter={this.hoverObservationalOn}  onMouseLeave={this.hoverObservationalOff} onClick={this.selectObservational}  to="/Observational">observational</Link> <br></br>
+                      </div>
+                      }
+                      {history.location.pathname !== "/Observational" &&
+                      <div>
+                        <Link style={this.state.hoverObservation ? hoverTabStyle : tabStyle} onMouseEnter={this.hoverObservationalOn}  onMouseLeave={this.hoverObservationalOff} onClick={this.selectObservational} to="/Observational">observational</Link> <br></br>
+                      </div>
+                      }
+
+                      {history.location.pathname === "/Rotoscopes" && 
+                      <div>
+                          <Link style={hoverTabStyle} onMouseEnter={this.hoverRotoscopesOn}  onMouseLeave={this.hoverRotoscopesOff} onClick={this.selectRotoscopes} to="/Rotoscopes">rotoscopes</Link> <br></br>
+                      </div>
+                      }
+                      {history.location.pathname !== "/Rotoscopes" &&
+                      <div>
+                          <Link style={this.state.hoverRotoscopes ? hoverTabStyle : tabStyle} onMouseEnter={this.hoverRotoscopesOn}  onMouseLeave={this.hoverRotoscopesOff} onClick={this.selectRotoscopes} to="/Rotoscopes">rotoscopes</Link> <br></br>
+                      </div>
+                      }
+                      </div>
+                  </div>
+                
+
                 {history.location.pathname === "/AboutMe" && 
                 <Link
                 style={ hoverTabStyle} 
@@ -224,8 +392,19 @@ class App extends React.Component {
                         <Link onClick={this.closeMenu.bind(this)} style={{textDecoration: "none"}} to="/">
                           <p style={{mobileOptions}}>home</p>
                         </Link>
-                        <Link onClick={this.closeMenu.bind(this)} style={{textDecoration: "none"}} to="/Portfolio">
-                          <p style={{mobileOptions}}>portfolio</p>
+                        <Link  onClick={this.closeMenu.bind(this)} style={{textDecoration: "none"}} to="/PersonalIllustration">
+                        <p style={{mobileOptions}}>personal illustration</p></Link>
+                        <Link  onClick={this.closeMenu.bind(this)} style={{textDecoration: "none"}} to="/Portraits">
+                          <p style={{mobileOptions}}>portraits</p>
+                        </Link>
+                        <Link  onClick={this.closeMenu.bind(this)} style={{textDecoration: "none"}} to="/Design">
+                          <p style={{mobileOptions}}>design</p>
+                        </Link>
+                        <Link onClick={this.closeMenu.bind(this)} style={{textDecoration: "none"}} to="/Observational">
+                          <p style={{mobileOptions}}>observational</p>
+                        </Link>
+                        <Link  onClick={this.closeMenu.bind(this)} style={{textDecoration: "none"}} to="/Rotoscopes">
+                          <p style={{mobileOptions}}>rotoscopes</p>
                         </Link>
                         <Link  onClick={this.closeMenu.bind(this)}style={{textDecoration: "none"}} to="/AboutMe">
                           <p style={{mobileOptions}}>about me</p>
@@ -239,20 +418,24 @@ class App extends React.Component {
                   height={24}
                   strokeWidth={3}
                   rotate={0}
-                  color='white'
+                  color='black'
                   borderRadius={0}
                   animationDuration={0.5}
                 />
             </div>
             <div  style={{paddingBottom: "30px"}}>
-              <label style={{color: "white", fontSize: "70px"}}>Slina Frich</label>
+              <label style={{color: "black", fontSize: "60px"}}>Slina Frich</label>
             </div>
         </MediaQuery>
 
             <Switch onChange={this.updateHistory}>
                 <Route exact path="/" onChange={this.updateHistory}><HomeForm className="tabContent"/></Route>
-                <Route exact path="/Portfolio" onChange={this.updateHistory}> <Portfolio className="tabContent"/> </Route>
                 <Route exact path="/AboutMe" onChange={this.updateHistory}><AboutMeForm className="tabContent"/></Route>
+                <Route exact path="/Portraits" onChange={this.updateHistory}><Portraits className="tabContent"/></Route>
+                <Route exact path="/Design" onChange={this.updateHistory}> <Design className="tabContent"/> </Route>
+                <Route exact path="/PersonalIllustration" onChange={this.updateHistory}><PersonalIllustration className="tabContent"/></Route>
+                <Route exact path="/Observational" onChange={this.updateHistory}><Observational className="tabContent"/></Route>]
+                <Route exact path="/Rotoscopes" onChange={this.updateHistory}><Rotoscopes className="tabContent"/></Route>
             </Switch>
         </div>
       </Router> <br></br>
