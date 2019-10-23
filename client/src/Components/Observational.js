@@ -20,7 +20,6 @@ class Observational extends React.Component {
   };
 
   render() {
-    const { modalIsOpen } = this.state;
     return (
       <div>
         <MediaQuery query='(max-width: 1224px)'>

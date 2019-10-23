@@ -67,7 +67,6 @@ class App extends React.Component {
       hoverPortraits: false,
       hoverRotoscopes: false,
       hoverAboutMe: false,
-      modalIsOpen: false,
       menuOpen: false,
       showMenu: false
     };
@@ -327,7 +326,7 @@ class App extends React.Component {
                     </Link>
                   }
 
-                  <div class="dropdown">
+                  <div className="dropdown">
                     {(history.location.pathname === "/PersonalIllustration" || history.location.pathname === "/Portraits" || history.location.pathname === "/Design" ||
                       history.location.pathname === "/Observational" || history.location.pathname === "/Rotoscopes") &&
                       <label style={hoverTabStyle} >portfolio ↴</label>
@@ -337,7 +336,7 @@ class App extends React.Component {
                       <label style={this.state.Portfolio ? hoverTabStyle : tabStyle} >portfolio ↴</label>
                     }
 
-                  <div class="dropdown-content">
+                  <div className="dropdown-content">
                       {history.location.pathname === "/PersonalIllustration" &&
                       <div>
                         <Link style={hoverTabStyle} onMouseEnter={this.hoverPersonalOn}  onMouseLeave={this.hoverPersonalOff} onClick={this.selectPersonal}  to="/PersonalIllustration">personal illustration</Link> <br></br>

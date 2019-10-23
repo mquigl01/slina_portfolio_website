@@ -9,16 +9,16 @@ class AboutMeForm extends React.Component {
     return (
         <div className="tabContent">
           <MediaQuery query='(min-width: 1224px)'>           
-          <Grid marginLeft={2} marginRight={2} marginTop={0}>
+          <Grid marginLeft={2} marginRight={2} marginTop={0} >
                   <Grid size={4} >
                     <div style={{padding: "10px", paddingLeft: "20px"}}>
-                      <img src={me} width={300} height={400} />
-                      <img src={SmokingPencil} width={300} height={400} />
+                      <img src={me} width={300} alt="Me" height={400} />
+                      <img src={SmokingPencil} alt="Exibit" width={300} height={400} />
                     </div>
                   </Grid>
                   <Grid size={8}>
                   <div style={{textAlign: "left", paddingleft: "10px"}}>
-                    <h3>Hi, my name is Slina</h3>
+                    <h3 style={{fontSize: "20"}} >Hi, my name is Slina</h3>
                     <br></br>
                       <p>
                       I am an artist studying B.A. Illustration at Sheridan College in Oakville, Ontario. By attending college, I hope to acquire the skills necessary for producing a versatile range of work for others.<br></br>
@@ -41,14 +41,14 @@ class AboutMeForm extends React.Component {
             </MediaQuery>
 
             <MediaQuery query='(max-width: 1224px)'>
-                  <h3 className="title" ><b>Hi, my name is Slina</b></h3>
+                  <h3 style={{fontSize: "20"}}>Hi, my name is Slina</h3>
                 <br></br>
                   <p>
                     I am an artist studying B.A. Illustration at Sheridan College in Oakville, Ontario. By attending college, I hope to acquire the skills necessary for producing a versatile range of work for others.<br></br>
                     <br></br>My current personal illustration work focuses on quirky ink drawings and incorporating digital mediums. My digital skills within the Adobe CC are practiced in Photoshop, Illustrator, and Premiere Pro.<br></br>
                     <br></br>I take pride in making others happy, which is why creating portraits of any kind for other people is my favourite thing to do. 
                     </p>
-                  <img src={me} width={250} height={350} />
+                  <img src={me} alt="Me" width={250} height={350} />
                   <br></br>
               <div style={{textAlign: "center"}} >
                 <label ><b>Education</b></label> <br></br>
@@ -64,7 +64,7 @@ class AboutMeForm extends React.Component {
                           <p>▢&nbsp;&nbsp;&nbsp;&nbsp;Dec 2017	&nbsp;&nbsp; Selected: 2017 Annual Juried Show, Gallery Stratford </p>
                           <p>▢&nbsp;&nbsp;&nbsp;&nbsp;Jan 2018	&nbsp;&nbsp; Thirty - One, Grade 12 Art Exhibition, Gallery Stratford </p>
                     </div>
-                    <img src={SmokingPencil} width={250} height={350} />
+                    <img src={SmokingPencil} alt="Exibit" width={250} height={350} />
             </MediaQuery>
         </div>
     );

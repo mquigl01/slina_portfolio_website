@@ -1,6 +1,5 @@
 import React from 'react';
 import MediaQuery  from 'react-responsive';
-import { ImageGroup, Image } from 'react-fullscreen-image';
 import { Player } from 'video-react';
 let Dance = require('./Rotoscopes/Dance.mp4');
 let Dance_Thumbnail = require('./Rotoscopes/Dance_Thumbnail.png');
@@ -12,15 +11,7 @@ let Dreams = require('./Rotoscopes/Dream.mp4');
 let Dream_Thumbnail = require('./Rotoscopes/Dream_Thumbnail.png');
 
 class Rotoscopes extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-    };
-  }
-
   render() {
-
     return (
       <div>
         <MediaQuery query='(max-width: 1224px)'>
