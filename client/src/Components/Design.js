@@ -1,8 +1,16 @@
 import React from 'react';
 import MediaQuery  from 'react-responsive';
 import { ImageGroup, Image } from 'react-fullscreen-image';
+let Album = require('./Design/Album.png');
+let Melt = require('./Design/Melt.jpg');
+let PandaChair = require('./Design/PandaChair.png');
+let Pho = require('./Design/Pho.jpg');
 
 const images = [
+  Album,
+  Melt,
+  PandaChair,
+  Pho
 ];
 
 
@@ -50,7 +58,7 @@ class Design extends React.Component {
           <h3 >
             Design
           </h3>
-          <div style={{padding: "20px", margin: "60px", marginTop: "10px"}}>
+          <div style={{margin: "200px", marginTop: "20px", marginBottom: "20px", paddingTop: "20px"}}>
           <ImageGroup>
             <ul className="images">
               {images.map(i => (

@@ -6,6 +6,7 @@ import Portraits from "./Components/Portraits";
 import PersonalIllustration from "./Components/PersonalIllustrations";
 import Rotoscopes from "./Components/Rotoscopes";
 import Observational from "./Components/Observational";
+import Contact from "./Components/Contact";
 import Design from "./Components/Design";
 import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 import { createBrowserHistory } from 'history';
@@ -57,6 +58,7 @@ class App extends React.Component {
       description: "",
       username: "",
       password: "",
+      hoverContact: false,
       hoverHome: false,
       hoverPortfolio: false,
       hoverDesign: false,
@@ -89,6 +91,9 @@ class App extends React.Component {
     this.hoverRotoscopesOff = this.hoverRotoscopesOff.bind(this);
     this.selectRotoscopes = this.selectRotoscopes.bind(this);
 
+    this.hoverContactOn = this.hoverContactOn.bind(this);
+    this.hoverContactOff = this.hoverContactOff.bind(this);
+
     this.handleStateChange = this.handleStateChange.bind(this);
     this.hoverHomeOn = this.hoverHomeOn.bind(this);
     this.hoverHomeOff = this.hoverHomeOff.bind(this);
@@ -96,6 +101,7 @@ class App extends React.Component {
     this.hoverAboutMeoff = this.hoverAboutMeoff.bind(this);
     this.selectHome = this.selectHome.bind(this);
     this.selectAboutMe = this.selectAboutMe.bind(this);
+    this.selectContact = this.selectContact.bind(this);
     this.updateHistory = this.updateHistory.bind(this);
     this.changeDropDown = this.changeDropDown.bind(this);
     this.showMenu = this.showMenu.bind(this); 
@@ -126,6 +132,7 @@ class App extends React.Component {
   }
 
   async selectDesign() {
+    this.setState({ hoverContact: false });
     this.setState({ hoverAboutMe: false });
     this.setState({ hoverHome: false });
     this.setState({ hoverObservation: false });
@@ -145,6 +152,7 @@ class App extends React.Component {
   }
 
   async selectObservational() {
+    this.setState({ hoverContact: false });
     this.setState({ hoverAboutMe: false });
     this.setState({ hoverHome: false });
     this.setState({ hoverObservation: true });
@@ -164,6 +172,7 @@ class App extends React.Component {
   }
 
   async selectPersonal() {
+    this.setState({ hoverContact: false });
     this.setState({ hoverAboutMe: false });
     this.setState({ hoverHome: false });
     this.setState({ hoverObservation: false });
@@ -183,6 +192,7 @@ class App extends React.Component {
   }
 
   async selectPortraits() {
+    this.setState({ hoverContact: false });
     this.setState({ hoverAboutMe: false });
     this.setState({ hoverHome: false });
     this.setState({ hoverObservation: false });
@@ -202,6 +212,7 @@ class App extends React.Component {
   }
 
   async selectRotoscopes() {
+    this.setState({ hoverContact: false });
     this.setState({ hoverAboutMe: false });
     this.setState({ hoverHome: false });
     this.setState({ hoverObservation: false });
@@ -221,6 +232,7 @@ class App extends React.Component {
   }
 
   async selectHome() {
+    this.setState({ hoverContact: false });
     this.setState({ hoverAboutMe: false });
     this.setState({ hoverObservation: false });
     this.setState({ hoverPersonal: false });
@@ -239,7 +251,29 @@ class App extends React.Component {
     }
   }
 
+
+  async selectContact() {
+    this.setState({ hoverAboutMe: false });
+    this.setState({ hoverObservation: false });
+    this.setState({ hoverPersonal: false });
+    this.setState({ hoverPortraits: false });
+    this.setState({ hoverRotoscopes: false });
+    this.setState({ hoverDesign: false });
+    this.setState({ hoverHome: false });
+    this.setState({ hoverContact: true });
+    await history.push("/Contact");
+  }
+  hoverContactOn(){
+    this.setState({ hoverContact: true });
+  }
+  hoverContactOff(){ 
+    if(history.location.pathname !== "/Contact") {
+      this.setState({ hoverContact: false });
+    }
+  }
+
   async selectAboutMe(){
+    this.setState({ hoverContact: false });
     this.setState({ hoverAboutMe: true });
     this.setState({ hoverObservation: false });
     this.setState({ hoverPersonal: false });
@@ -380,6 +414,25 @@ class App extends React.Component {
                   about me
                   </Link>
               }
+
+                {history.location.pathname === "/Contact" && 
+                    <Link 
+                    style={hoverTabStyle} 
+                    to="/Contact">
+                    contact me
+                    </Link>
+                  }
+
+                  {history.location.pathname !== "/Contact" &&
+                    <Link 
+                    style={this.state.hoverContact ? hoverTabStyle : tabStyle} 
+                    onMouseEnter={this.hoverContactOn} 
+                    onMouseLeave={this.hoverContactOff}  
+                    onClick={this.selectContact} 
+                    to="/Contact">
+                    contact me
+                    </Link>
+                  }
               </div> 
               </nav>
           </MediaQuery>
@@ -406,8 +459,11 @@ class App extends React.Component {
                         <Link  onClick={this.closeMenu.bind(this)} style={{textDecoration: "none"}} to="/Rotoscopes">
                           <p style={{mobileOptions}}>rotoscopes</p>
                         </Link>
-                        <Link  onClick={this.closeMenu.bind(this)}style={{textDecoration: "none"}} to="/AboutMe">
+                        <Link  onClick={this.closeMenu.bind(this)} style={{textDecoration: "none"}} to="/AboutMe">
                           <p style={{mobileOptions}}>about me</p>
+                        </Link>
+                        <Link  onClick={this.closeMenu.bind(this)} style={{textDecoration: "none"}} to="/Contact">
+                          <p style={{mobileOptions}}>contact me</p>
                         </Link>
                 </CheeseburgerMenu>
           
@@ -434,8 +490,9 @@ class App extends React.Component {
                 <Route exact path="/Portraits" onChange={this.updateHistory}><Portraits className="tabContent"/></Route>
                 <Route exact path="/Design" onChange={this.updateHistory}> <Design className="tabContent"/> </Route>
                 <Route exact path="/PersonalIllustration" onChange={this.updateHistory}><PersonalIllustration className="tabContent"/></Route>
-                <Route exact path="/Observational" onChange={this.updateHistory}><Observational className="tabContent"/></Route>]
+                <Route exact path="/Observational" onChange={this.updateHistory}><Observational className="tabContent"/></Route>
                 <Route exact path="/Rotoscopes" onChange={this.updateHistory}><Rotoscopes className="tabContent"/></Route>
+                <Route exact path="/Contact" onChange={this.updateHistory}><Contact className="tabContent"/></Route>
             </Switch>
         </div>
       </Router> <br></br>

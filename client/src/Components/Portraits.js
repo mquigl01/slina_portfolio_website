@@ -1,22 +1,40 @@
 import React from 'react';
 import MediaQuery  from 'react-responsive';
 import { ImageGroup, Image } from 'react-fullscreen-image'
-let Panda = require('./Images/Panda.jpg');
-let Portrait = require('./Images/Portrait.jpg');
-let Billie = require('./Images/Billie.jpg');
-let Sisters = require('./Images/Sisters.jpg');
-let Mikko = require('./Images/Mikko.jpg');
-let Cayla = require('./Images/Cayla.jpg');
-let Julia = require('./Images/Julia.jpg');
+let Panda = require('./Portraits/Panda.jpg');
+let Portrait = require('./Portraits/Portrait.jpg');
+let Billie = require('./Portraits/Billie.jpg');
+let Sisters = require('./Portraits/Sisters.jpg');
+let Mikko = require('./Portraits/Mikko.jpg');
+let Cayla = require('./Portraits/Cayla.jpg');
+let Julia = require('./Portraits/Julia.jpg');
+
+
+let Bre = require('./Portraits/Bre.jpg');
+let Cat = require('./Portraits/Cat.jpg');
+let DarkThoughts = require('./Portraits/DarkThoughts.jpg');
+let Mackenzie = require('./Portraits/Mackenzie.jpg');
+let Dog = require('./Portraits/Dog.jpg');
+let Jen = require('./Portraits/Jen.png');
+let Peyton = require('./Portraits/Peyton.jpg');
+let Trevor = require('./Portraits/Trevor.jpg');
 
 const images = [
     Panda,
     Portrait, 
     Billie, 
+    Jen,
     Sisters, 
     Mikko, 
     Cayla, 
-    Julia
+    Julia,
+    Bre,
+    Cat,
+    Peyton,
+    Trevor,
+    DarkThoughts,
+    Mackenzie,
+    Dog
 ]
 
 class Portraits extends React.Component {
@@ -63,7 +81,7 @@ class Portraits extends React.Component {
           <h3 >
             Portraits
           </h3>
-          <div style={{padding: "20px", margin: "60px", marginTop: "10px"}}>
+          <div style={{margin: "200px", marginTop: "20px", marginBottom: "20px", paddingTop: "20px"}}>
           <ImageGroup>
             <ul className="images">
               {images.map(i => (

@@ -28,7 +28,8 @@
     "react-share": "^3.0.1",
     "react-slick": "^0.25.2",
     "react-social-icons": "^4.1.0",
-    "reactstrap": "^8.1.1"
+    "reactstrap": "^8.1.1",
+    "video-react": "^0.14.1"
   },
   "scripts": {
     "start": "react-scripts start",

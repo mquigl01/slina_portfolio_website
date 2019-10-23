@@ -1,10 +1,15 @@
 import React from 'react';
 import MediaQuery  from 'react-responsive';
 import { ImageGroup, Image } from 'react-fullscreen-image';
+import { Player } from 'video-react';
+let Dance = require('./Rotoscopes/Dance.mp4');
+let Dance_Thumbnail = require('./Rotoscopes/Dance_Thumbnail.png');
 
-const images = [
-];
+let Experimental = require('./Rotoscopes/Experimental.mp4');
+let Experimental_Thumbnail = require('./Rotoscopes/Experimental_Thumbnail.png');
 
+let Dreams = require('./Rotoscopes/Dream.mp4');
+let Dream_Thumbnail = require('./Rotoscopes/Dream_Thumbnail.png');
 
 class Rotoscopes extends React.Component {
   constructor(props) {
@@ -22,27 +27,25 @@ class Rotoscopes extends React.Component {
           <h3 >
             Rotoscopes
           </h3>
-          <div style={{padding: "20px", margin: "60px", marginTop: "10px"}}>
-          <ImageGroup>
-            <ul className="images">
-              {images.map(i => (
-                <li key={i}>
-                  <Image style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    height: '100%',
-                    width: '100%',
-                    objectFit: 'cover',
-                  }} 
-                  src={i} 
-                  alt="rotoscopes" />
-                </li>
-              ))}
-            </ul>
-          </ImageGroup>
+          <link rel="stylesheet" href="https://video-react.github.io/assets/video-react.css"/>
+          <div style={{padding: "20px", margin: "60px", marginTop: "10px", marginBottom: "20px"}}>
+          <Player
+            playsInline
+            poster={Dance_Thumbnail}
+            src={Dance}
+          /> <br></br>
+
+          <Player
+            playsInline
+            poster={Experimental_Thumbnail}
+            src={Experimental}
+          /><br></br>
+
+          <Player
+            playsInline
+            poster={Dream_Thumbnail}
+            src={Dreams}
+          />
           </div>
         </MediaQuery>
 
@@ -50,27 +53,25 @@ class Rotoscopes extends React.Component {
           <h3 >
             Rotoscopes
           </h3>
-          <div style={{padding: "20px", margin: "60px", marginTop: "10px"}}>
-          <ImageGroup>
-            <ul className="images">
-              {images.map(i => (
-                <li key={i}>
-                  <Image style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    height: '100%',
-                    width: '100%',
-                    objectFit: 'cover',
-                  }} 
-                  src={i} 
-                  alt="rotoscopes" />
-                </li>
-              ))}
-            </ul>
-          </ImageGroup>
+          <link rel="stylesheet" href="https://video-react.github.io/assets/video-react.css"/>
+          <div style={{padding: "20px", margin: "300px", marginTop: "10px", marginBottom: "20px"}}>
+          <Player
+            playsInline
+            poster={Dance_Thumbnail}
+            src={Dance}
+          /> <br></br>
+
+          <Player
+            playsInline
+            poster={Experimental_Thumbnail}
+            src={Experimental}
+          /><br></br>
+
+          <Player
+            playsInline
+            poster={Dream_Thumbnail}
+            src={Dreams}
+          />
           </div>
         </MediaQuery> 
     </div>

@@ -43,7 +43,7 @@ li {
 }
 
 .slider-item-div {
-  padding: 20px;
+  padding: 0px;
   background-color: black;
   text-align: center;
   height: 100%;
@@ -100,18 +100,47 @@ li {
   display: block;
 }
 
+input {
+    width: 50%;
+    padding: 12px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+textarea {
+    width: 50%;
+    height: 120px;
+     padding: 12px;
+     border: 1px solid grey;
+     border-radius: 4px;
+     box-sizing: border-box;
+     margin-top: 6px;
+     margin-bottom: 16px;
+     resize: vertical;
+}
+
+
 button {
-  font-size: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  color:#006699;
   background-color: white;
-  color: black;
+  border: 2px solid #006699;
+  padding: 10px;
   text-decoration: none;
-  padding: 2px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 4px;
+  margin: 20px;
 }
 
 button:hover {
-  color:#006699;
-  background-color: white;
-  padding: 2px;
+  color:white;
+  background-color: #006699;
 }
 
 label {

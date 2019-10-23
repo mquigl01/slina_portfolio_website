@@ -1,10 +1,16 @@
 import React from 'react';
 import MediaQuery  from 'react-responsive';
 import { ImageGroup, Image } from 'react-fullscreen-image';
-let Shoes = require('./Images/Shoes.jpg');
+let Shoes = require('./Observational/Shoes.jpg');
+let Camera = require('./Observational/Camera.png');
+let FigureSeated = require('./Observational/FigureSeated.png');
+let LitRoom = require('./Observational/LitRoom.png');
 
 const images = [
   Shoes, 
+  Camera,
+  FigureSeated, 
+  LitRoom
 ]
 
 class Observational extends React.Component {
@@ -49,7 +55,7 @@ class Observational extends React.Component {
           <h3 >
             Observational
           </h3>
-          <div style={{padding: "20px", margin: "60px", marginTop: "10px"}}>
+          <div style={{margin: "200px", marginTop: "20px", marginBottom: "20px", paddingTop: "20px"}}>
           <ImageGroup>
             <ul className="images">
               {images.map(i => (
