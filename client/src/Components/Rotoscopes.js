@@ -1,14 +1,6 @@
 import React from 'react';
 import MediaQuery  from 'react-responsive';
 import { Player } from 'video-react';
-let Dance = require('./Rotoscopes/Dance.mp4');
-let Dance_Thumbnail = require('./Rotoscopes/Dance_Thumbnail.png');
-
-let Experimental = require('./Rotoscopes/Experimental.mp4');
-let Experimental_Thumbnail = require('./Rotoscopes/Experimental_Thumbnail.png');
-
-let Dreams = require('./Rotoscopes/Dream.mp4');
-let Dream_Thumbnail = require('./Rotoscopes/Dream_Thumbnail.png');
 
 class Rotoscopes extends React.Component {
   render() {
@@ -22,20 +14,20 @@ class Rotoscopes extends React.Component {
           <div style={{padding: "20px", margin: "60px", marginTop: "10px", marginBottom: "20px"}}>
           <Player
             playsInline
-            poster={Dance_Thumbnail}
-            src={Dance}
+            poster="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Dance_Thumbnail.png"
+            src="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Dance.mp4"
           /> <br></br>
 
           <Player
             playsInline
-            poster={Experimental_Thumbnail}
-            src={Experimental}
+            poster="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Experimental_Thumbnail.png"
+            src="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Experimental.mp4"
           /><br></br>
 
           <Player
             playsInline
-            poster={Dream_Thumbnail}
-            src={Dreams}
+            poster="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Dream_Thumbnail.png"
+            src="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Dream.mp4"
           />
           </div>
         </MediaQuery>
@@ -48,20 +40,20 @@ class Rotoscopes extends React.Component {
           <div style={{padding: "20px", margin: "300px", marginTop: "10px", marginBottom: "20px"}}>
           <Player
             playsInline
-            poster={Dance_Thumbnail}
-            src={Dance}
+            poster="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Dance_Thumbnail.png"
+            src="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Dance.mp4"
           /> <br></br>
 
           <Player
             playsInline
-            poster={Experimental_Thumbnail}
-            src={Experimental}
+            poster="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Experimental_Thumbnail.png"
+            src="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Experimental.mp4"
           /><br></br>
 
           <Player
             playsInline
-            poster={Dream_Thumbnail}
-            src={Dreams}
+            poster="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Dream_Thumbnail.png"
+            src="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Dream.mp4"
           />
           </div>
         </MediaQuery> 
