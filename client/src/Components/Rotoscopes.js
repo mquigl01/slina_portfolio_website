@@ -14,25 +14,25 @@ class Rotoscopes extends React.Component {
           <div style={{padding: "20px", margin: "60px", marginTop: "10px", marginBottom: "20px"}}>
           <Player
             playsInline
-            poster="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Dance_Thumbnail.png"
-            src="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Dance.mp4"
+            poster="https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Rotoscopes/Dance_Thumbnail.png"
+            src="https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Rotoscopes/Dance.mp4"
           /> <br></br>
 
           <Player
             playsInline
-            poster="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Experimental_Thumbnail.png"
-            src="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Experimental.mp4"
+            poster="https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Rotoscopes/Experimental_Thumbnail.png"
+            src="https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Rotoscopes/Experimental.mp4"
           /><br></br>
 
           <Player
             playsInline
-            poster="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Dream_Thumbnail.png"
-            src="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Dream.mp4"
+            poster="https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Rotoscopes/Dream_Thumbnail.png"
+            src="https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Rotoscopes/Dream.mp4"
           />
           </div>
         </MediaQuery>
 
-        <MediaQuery query='(min-width: 1224px)'>
+        <MediaQuery query='(min-width: 1225px)'>
           <h3 >
             Rotoscopes
           </h3>
@@ -40,20 +40,20 @@ class Rotoscopes extends React.Component {
           <div style={{padding: "20px", margin: "300px", marginTop: "10px", marginBottom: "20px"}}>
           <Player
             playsInline
-            poster="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Dance_Thumbnail.png"
-            src="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Dance.mp4"
+            poster="https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Rotoscopes/Dance_Thumbnail.png"
+            src="https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Rotoscopes/Dance.mp4"
           /> <br></br>
 
           <Player
             playsInline
-            poster="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Experimental_Thumbnail.png"
-            src="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Experimental.mp4"
+            poster="https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Rotoscopes/Experimental_Thumbnail.png"
+            src="https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Rotoscopes/Experimental.mp4"
           /><br></br>
 
           <Player
             playsInline
-            poster="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Dream_Thumbnail.png"
-            src="http://s3.amazonaws.com/slinafrichitthavongwebsite/Rotoscopes/Dream.mp4"
+            poster="https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Rotoscopes/Dream_Thumbnail.png"
+            src="https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Rotoscopes/Dream.mp4"
           />
           </div>
         </MediaQuery> 

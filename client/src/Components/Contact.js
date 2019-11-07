@@ -67,7 +67,7 @@ class Contact extends React.Component {
         </div>
         </MediaQuery>
 
-        <MediaQuery query='(min-width: 1224px)'>
+        <MediaQuery query='(min-width: 1225px)'>
         <div className="tabContent">
             <h3>Contact Me</h3><br></br> <br></br>
             <div>

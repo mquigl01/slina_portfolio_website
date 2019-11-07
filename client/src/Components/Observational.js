@@ -1,16 +1,12 @@
 import React from 'react';
 import MediaQuery  from 'react-responsive';
 import { ImageGroup, Image } from 'react-fullscreen-image';
-let Shoes = require('./Observational/Shoes.jpg');
-let Camera = require('./Observational/Camera.png');
-let FigureSeated = require('./Observational/FigureSeated.png');
-let LitRoom = require('./Observational/LitRoom.png');
 
 const images = [
-  Shoes, 
-  Camera,
-  FigureSeated, 
-  LitRoom
+  "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Observational/Shoes.jpg", 
+  "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Observational/Camera.png",
+  "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Observational/FigureSeated.png", 
+  "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Observational/LitRoom.png"
 ]
 
 class Observational extends React.Component {
@@ -50,7 +46,7 @@ class Observational extends React.Component {
           </div>
         </MediaQuery>
 
-        <MediaQuery query='(min-width: 1224px)'>
+        <MediaQuery query='(min-width: 1225px)'>
           <h3 >
             Observational
           </h3>

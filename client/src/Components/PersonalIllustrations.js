@@ -2,18 +2,12 @@ import React from 'react';
 import MediaQuery  from 'react-responsive';
 import { ImageGroup, Image } from 'react-fullscreen-image';
 
-let Book = require('./Personal/Book.jpg');
-let OldGrove = require('./Personal/OldGrove.png');
-let PandaFam = require('./Personal/PandaFam.jpg');
-let Shadows = require('./Personal/Shadows.jpg');
-let WindowSill = require('./Personal/WindowSill.jpg');
-
 const images = [
-  Book,
-  OldGrove,
-  PandaFam,
-  Shadows,
-  WindowSill
+  "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Personal/Book.jpg",
+  "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Personal/OldGrove.png",
+  "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Personal/PandaFam.jpg",
+  "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Personal/Shadows.jpg",
+  "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Personal/WindowSill.jpg"
 ];
 
 
@@ -57,7 +51,7 @@ class PersonalIllustrations extends React.Component {
           </div>
         </MediaQuery>
 
-        <MediaQuery query='(min-width: 1224px)'>
+        <MediaQuery query='(min-width: 1225px)'>
           <h3 >
             Personal Illustrations
           </h3>

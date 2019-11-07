@@ -1,40 +1,23 @@
 import React from 'react';
 import MediaQuery  from 'react-responsive';
 import { ImageGroup, Image } from 'react-fullscreen-image'
-let Panda = require('./Portraits/Panda.jpg');
-let Portrait = require('./Portraits/Portrait.jpg');
-let Billie = require('./Portraits/Billie.jpg');
-let Sisters = require('./Portraits/Sisters.jpg');
-let Mikko = require('./Portraits/Mikko.jpg');
-let Cayla = require('./Portraits/Cayla.jpg');
-let Julia = require('./Portraits/Julia.jpg');
-
-
-let Bre = require('./Portraits/Bre.jpg');
-let Cat = require('./Portraits/Cat.jpg');
-let DarkThoughts = require('./Portraits/DarkThoughts.jpg');
-let Mackenzie = require('./Portraits/Mackenzie.jpg');
-let Dog = require('./Portraits/Dog.jpg');
-let Jen = require('./Portraits/Jen.png');
-let Peyton = require('./Portraits/Peyton.jpg');
-let Trevor = require('./Portraits/Trevor.jpg');
 
 const images = [
-    Panda,
-    Portrait, 
-    Billie, 
-    Jen,
-    Sisters, 
-    Mikko, 
-    Cayla, 
-    Julia,
-    Bre,
-    Cat,
-    Peyton,
-    Trevor,
-    DarkThoughts,
-    Mackenzie,
-    Dog
+    "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Portraits/Panda.jpg",
+    "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Portraits/Portrait.jpg", 
+    "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Portraits/Billie.jpg", 
+    "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Portraits/Jen.png",
+    "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Portraits/Sisters.jpg", 
+    "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Portraits/Mikko.jpg", 
+    "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Portraits/Cayla.jpg", 
+    "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Portraits/Julia.jpg",
+    "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Portraits/Bre.jpg",
+    "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Portraits/Cat.jpg",
+    "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Portraits/Peyton.jpg",
+    "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Portraits/Trevor.jpg",
+    "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Portraits/DarkThoughts.jpg",
+    "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Portraits/Mackenzie.jpg",
+    "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Portraits/Dog.jpg"
 ]
 
 class Portraits extends React.Component {
@@ -77,7 +60,7 @@ class Portraits extends React.Component {
           </div>
         </MediaQuery>
 
-        <MediaQuery query='(min-width: 1224px)'>
+        <MediaQuery query='(min-width: 1225px)'>
           <h3 >
             Portraits
           </h3>

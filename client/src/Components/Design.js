@@ -1,16 +1,13 @@
 import React from 'react';
 import MediaQuery  from 'react-responsive';
 import { ImageGroup, Image } from 'react-fullscreen-image';
-let Album = require('./Design/Album.png');
-let Melt = require('./Design/Melt.jpg');
-let PandaChair = require('./Design/PandaChair.png');
-let Pho = require('./Design/Pho.jpg');
 
 const images = [
-  Album,
-  Melt,
-  PandaChair,
-  Pho
+  "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Design/Album.png",
+  "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Design/Cats.png",
+  "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Design/Melt.jpg",
+  "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Design/PandaChair.png",
+  "https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/Design/Pho.jpg"
 ];
 
 
@@ -54,7 +51,7 @@ class Design extends React.Component {
           </div>
         </MediaQuery>
 
-        <MediaQuery query='(min-width: 1224px)'>
+        <MediaQuery query='(min-width: 1225px)'>
           <h3 >
             Design
           </h3>

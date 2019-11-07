@@ -1,19 +1,17 @@
 import React from 'react';
 import { Grid } from 'gymnast'
 import MediaQuery  from 'react-responsive';
-let me = require('./Images/me.jpg');
-let SmokingPencil = require('./Images/SmokingPencil.jpg');
 
 class AboutMeForm extends React.Component {
   render() {
     return (
         <div className="tabContent">
-          <MediaQuery query='(min-width: 1224px)'>           
+          <MediaQuery query='(min-width: 1225px)'>           
           <Grid marginLeft={2} marginRight={2} marginTop={0} >
                   <Grid size={4} >
                     <div style={{padding: "10px", paddingLeft: "20px"}}>
-                      <img src={me} width={300} alt="Me" height={400} />
-                      <img src={SmokingPencil} alt="Exibit" width={300} height={400} />
+                      <img src="https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/General/me.jpg" width={300} alt="Me" height={400} />
+                      <img src="https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/General/SmokingPencil.jpg" alt="Exibit" width={300} height={400} />
                     </div>
                   </Grid>
                   <Grid size={8}>
@@ -48,7 +46,7 @@ class AboutMeForm extends React.Component {
                     <br></br>My current personal illustration work focuses on quirky ink drawings and incorporating digital mediums. My digital skills within the Adobe CC are practiced in Photoshop, Illustrator, and Premiere Pro.<br></br>
                     <br></br>I take pride in making others happy, which is why creating portraits of any kind for other people is my favourite thing to do. 
                     </p>
-                  <img src={me} alt="Me" width={250} height={350} />
+                  <img src="https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/General/me.jpg" alt="Me" width={250} height={350} />
                   <br></br>
               <div style={{textAlign: "center"}} >
                 <label ><b>Education</b></label> <br></br>
@@ -64,7 +62,7 @@ class AboutMeForm extends React.Component {
                           <p>▢&nbsp;&nbsp;&nbsp;&nbsp;Dec 2017	&nbsp;&nbsp; Selected: 2017 Annual Juried Show, Gallery Stratford </p>
                           <p>▢&nbsp;&nbsp;&nbsp;&nbsp;Jan 2018	&nbsp;&nbsp; Thirty - One, Grade 12 Art Exhibition, Gallery Stratford </p>
                     </div>
-                    <img src={SmokingPencil} alt="Exibit" width={250} height={350} />
+                    <img src="https://slinafrichitthavongwebsite.s3.ca-central-1.amazonaws.com/General/SmokingPencil.jpg" alt="Exibit" width={250} height={350} />
             </MediaQuery>
         </div>
     );

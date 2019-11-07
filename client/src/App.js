@@ -436,7 +436,7 @@ class App extends React.Component {
               </nav>
           </MediaQuery>
 
-          <MediaQuery query='(max-width: 1224px)'>
+          <MediaQuery query='(max-width: 1223px)'>
             <div style={{margin: "10px"}}>
                 <CheeseburgerMenu
                   isOpen={this.state.menuOpen}
