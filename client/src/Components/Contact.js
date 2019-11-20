@@ -1,6 +1,20 @@
 import React from 'react';
 import MediaQuery  from 'react-responsive';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Modal from 'react-modal';
+
+let modalTitle = "";
+let modalText = "";
+ 
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
 
 class Contact extends React.Component {
   constructor(props) {
@@ -11,6 +25,7 @@ class Contact extends React.Component {
       lastname: "",
       email: "",
       message: "",
+      modalIsOpen: false
     };
 
     this.changeFirstname = this.changeFirstname.bind(this);
@@ -18,6 +33,11 @@ class Contact extends React.Component {
     this.changeEmail = this.changeEmail.bind(this);
     this.changeMessage = this.changeMessage.bind(this);
     this.submitForm = this.submitForm.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+ 
+  closeModal() {
+    this.setState({modalIsOpen: false});
   }
 
   changeFirstname(e) {
@@ -33,20 +53,53 @@ class Contact extends React.Component {
     this.setState({message: e.target.value});
   }
 
-  submitForm(e) {
+  async submitForm(e) {
     let myJSON = {};
     myJSON.firstname = this.state.firstname;
     myJSON.lastname = this.state.lastname;
     myJSON.email = this.state.email;
     myJSON.message = this.state.message;
     console.log(myJSON);
+    let result = await sendEmail(myJSON);
+    console.log(result);
+    if(result.Error === "None") {
+      modalTitle = "Email Successfully Sent!";
+      modalText = "Thank you for taking the time to contact me, I will get back to you as soon as I can!";
+      this.setState({modalIsOpen: true});
+      this.setState({firstname: ""});
+      this.setState({lastname: ""});
+      this.setState({email: ""});
+      this.setState({message: ""});
+    }
+    else {
+      modalTitle = "Email Could Not Be Sent";
+      modalText = "Due to some issue, your email was unable to send. You can try again, or email me directly at slina.frich@gmail.com. Sorry for the inconvenience!";
+      this.setState({modalIsOpen: true});
+    }
+    
   }
 
   render() {
     return (
       <div>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+ 
+          <h1 style={{fontSize: "40px"}}>{modalTitle}</h1>
+          <div>
+            <p>{modalText}</p>
+          <button onClick={this.closeModal}>Okay</button>
+          </div>
+        </Modal>
+        
         <MediaQuery query='(max-width: 1224px)'>
         <div className="tabContent">
+        
+
         <h3>Contact Me</h3><br></br><br></br>
                 <div>
                     <label>First Name:</label><br></br>
@@ -93,5 +146,25 @@ class Contact extends React.Component {
   }
 }
 
+
+async function sendEmail(myjson) {
+  console.log(myjson);
+
+  let data = {};
+
+  await (async () => {
+    const rawResponse = await fetch('/api/v1/SendEmail', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(myjson)
+    });
+    data = await rawResponse.json();
+  })();
+
+    return data;
+}
 
 export default Contact;

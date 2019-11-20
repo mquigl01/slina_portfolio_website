@@ -14,6 +14,11 @@ html {
   font-family: 'Just Another Hand';
 }
 
+p {
+  font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif;
+  font-size: 30px;
+}
+
 h3 {
   font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif;
   font-size: 40px;
